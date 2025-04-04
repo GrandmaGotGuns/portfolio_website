@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  vue-app:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.website
+    ports:
+      - "8082:80"
+
+  express-app:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.express
+    ports:
+      - "3000:3000"
